@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    body {
+        background: url('/static/images/smrs.jpg') no-repeat center center fixed;
+        background-size: cover;
+    }
+
+    .register-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        padding: 20px;
+    }
+
+    .register-box {
+        background: rgba(17, 24, 39, 0.6); /* dark translucent */
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        padding: 45px 35px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        width: 100%;
+        max-width: 420px;
+        text-align: center;
+        color: #f3f4f6;
+    }
+
+    .register-box h2 {
+        color: #facc15;
+        margin-bottom: 25px;
+        font-size: 26px;
+    }
+
+    .register-box input {
+        width: 100%;
+        padding: 14px;
+        margin-bottom: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #ffffff;
+        font-size: 15px;
+        transition: all 0.3s;
+        outline: none;
+    }
+
+    .register-box input:focus {
+        border-color: #facc15;
+        box-shadow: 0 0 8px rgba(250, 204, 21, 0.6);
+    }
+
+    .register-box button {
+        background: linear-gradient(to right, #22d3ee, #6366f1); /* cyan to indigo */
+        color: white;
+        padding: 14px;
+        border: none;
+        border-radius: 10px;
+        width: 100%;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.3s;
+    }
+
+    .register-box button:hover {
+        background: linear-gradient(to right, #6366f1, #22d3ee);
+        transform: scale(1.05);
+        box-shadow: 0 0 10px rgba(59, 130, 246, 0.6);
+    }
+
+    .register-box p {
+        margin-top: 15px;
+        font-size: 14px;
+        color: #d1d5db;
+    }
+
+    .register-box a {
+        color: #60a5fa;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    .register-box a:hover {
+        color: #facc15;
+        text-decoration: underline;
+    }
+</style>
+
+    <div class="register-box">
+        <h2>📝 Create an Account</h2>
+        <form method="post">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Register</button>
+        </form>
+        <p>Already have an account? <a href="/login">Login</a></p>
+    </div>
+</div>
+{% endblock %}
